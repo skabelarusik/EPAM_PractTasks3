@@ -13,18 +13,18 @@ public class WeightDino {
 }
 
 class ChangeWeight {
-    private static int massKef = 1_000;
+    private static final int MASS_KEF = 1_000;
 
     public static double changeToGramm(double mass) {
-        return mass * massKef;
+        return mass * MASS_KEF;
     }
 
     public static double changeToMillGramm(double mass) {
-        return mass * massKef * massKef;
+        return mass * MASS_KEF * MASS_KEF;
     }
 
     public static double changeToTon(double mass) {
-        return mass / massKef;
+        return mass / MASS_KEF;
     }
 
 }
