@@ -9,13 +9,13 @@ public class RotateNumbers {
 }
 
 class DoRotate{
-       public static int rotate(int a){
+   public static int rotate(int a) {
         int temp = 6;
 
-        return (int)((a % 10) * Math.pow(10, temp--) + ((a/=10) % 10) * Math.pow(10, temp--) +
-                ((a/=10) % 10) * Math.pow(10, temp--) + ((a/=10) % 10) * Math.pow(10, temp--) +
-                ((a/=10) % 10) * Math.pow(10, temp--) + ((a/=10) % 10) * Math.pow(10, temp--) +
-                ((a/=10) % 10));
+        return (int) ((a % 10) * Math.pow(10, temp--) + ((a /= 10) % 10) * Math.pow(10, temp--) +
+                ((a /= 10) % 10) * Math.pow(10, temp--) + ((a /= 10) % 10) * Math.pow(10, temp--) +
+                ((a /= 10) % 10) * Math.pow(10, temp--) + ((a /= 10) % 10) * Math.pow(10, temp--) +
+                ((a /= 10) % 10));
     }
     
 }
