@@ -9,37 +9,13 @@ public class RotateNumbers {
 }
 
 class DoRotate{
-    public static int rotate(int a){
-        if(!checkNumbers(a)){
-            return -1;
-        }
+       public static int rotate(int a){
+        int temp = 6;
 
-        int temp = 7;
-        int newNumber = 0;
-
-        while (a > 0){
-            newNumber += a %10 * Math.pow(10, temp - 1);
-            a /= 10;
-            temp --;
-        }
-
-        return newNumber;
+        return (int)((a % 10) * Math.pow(10, temp--) + ((a/=10) % 10) * Math.pow(10, temp--) +
+                ((a/=10) % 10) * Math.pow(10, temp--) + ((a/=10) % 10) * Math.pow(10, temp--) +
+                ((a/=10) % 10) * Math.pow(10, temp--) + ((a/=10) % 10) * Math.pow(10, temp--) +
+                ((a/=10) % 10));
     }
-
-    public static boolean checkNumbers(int a){
-        boolean status = true;
-        int count = 0;
-
-        while (a > 0)
-        {
-            count++;
-            a /= 10;
-        }
-
-        if(count != 7) {
-            status = false;
-        }
-
-        return status;
-    }
+    
 }
