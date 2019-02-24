@@ -14,58 +14,22 @@ public class IncreaseNumbers {
 class checkIncreaseOrDecrease {
 
     public static boolean checkIncrease(int a) {
-        if (!checkNumbers(a)) {
-            return false;
+        boolean status = false;
+        
+        if( a % 10 >= (a /=10)%10 &&  a % 10 >= (a /= 10) % 10 && a % 10 >= (a /= 10) % 10 ) {
+            status = true;
         }
 
-        int temp = a % 10;
-        a /= 10;
-
-        while (a > 0) {
-            if (a % 10 <= temp) {
-                temp = a % 10;
-                a /= 10;
-            } else {
-                return false;
-            }
-        }
-
-        return true;
-
+        return status;
     }
 
     public static boolean checkDecrease(int a) {
-        if (!checkNumbers(a)) {
-            return false;
+        boolean status = false;
+        
+        if( a % 10 <= (a /=10)%10 &&  a % 10 <= (a /= 10) % 10 && a % 10 <= (a /= 10) % 10 ) {
+            status = true;
         }
 
-        int temp = a % 10;
-        a /= 10;
-
-        while (a > 0) {
-            if (a % 10 >= temp) {
-                temp = a % 10;
-                a /= 10;
-            } else {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    public static boolean checkNumbers(int a) {
-        int count = 0;
-
-        while (a > 0) {
-            a /= 10;
-            count++;
-        }
-        if (count != 4) {
-            System.out.println("Error");
-            return false;
-        }
-
-        return true;
+        return status;
     }
 }
